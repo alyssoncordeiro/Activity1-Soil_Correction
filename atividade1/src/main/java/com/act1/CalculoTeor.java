@@ -14,14 +14,26 @@ public class CalculoTeor extends App {
     }
 
     public double calculaPotassio() {
-        Potassio f = new Potassio();
+        Potassio p = new Potassio();
 
-        f.setTexturaSolo(1);
-        if (f.getTexturaSolo() == 1) {
-            f.setValPotassio(0.35);
-        } else if (f.getTexturaSolo() == 2) {
-            f.setValPotassio(0.35);
+        p.setTexturaSolo(1);
+        if (p.getTexturaSolo() == 1) {
+            p.setValPotassio(0.35);
+        } else if (p.getTexturaSolo() == 2) {
+            p.setValPotassio(0.35);
         }
-        return f.getValPotassio();
+        return p.getValPotassio();
+    }
+
+    public double calculaCalcio() {
+        Calcio c = new Calcio();
+
+        c.setTexturaSolo(1);
+        if (c.getTexturaSolo() == 1) {
+            c.setValCalcio(0.35);
+        } else if (c.getTexturaSolo() == 2) {
+            c.setValCalcio(0.35);
+        }
+        return c.getValCalcio();
     }
 }
