@@ -12,11 +12,11 @@ public class App {
         enxofreTeor = t.calculaEnxofre();
         aluminioTeor = t.calculaAluminio();
 
-        System.out.println(fosforoTeor);
-        System.out.println(potassioTeor);
-        System.out.println(calcioTeor);
-        System.out.println(magnesioTeor);
-        System.out.println(enxofreTeor);
-        System.out.println(aluminioTeor);
+        System.out.println("O teor do fosforo é:" + fosforoTeor);
+        System.out.println("O teor do potassio é:" + potassioTeor);
+        System.out.println("O teor do calcio é:" + calcioTeor);
+        System.out.println("O teor do magnesio é:" + magnesioTeor);
+        System.out.println("O teor do enxofre é:" + enxofreTeor);
+        System.out.println("O teor do aluminio é:" + aluminioTeor);
     }
 }

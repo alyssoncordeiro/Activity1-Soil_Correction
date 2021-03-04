@@ -1,6 +1,6 @@
 package com.act1;
 
-public class Potassio extends calculoTeor {
+public class Potassio extends CalculoTeor {
     private double valPotassio;
     private int texturaSolo;
 
@@ -12,11 +12,11 @@ public class Potassio extends calculoTeor {
         this.texturaSolo = texturaSolo;
     }
 
-    public double getvalPotassio() {
+    public double getValPotassio() {
         return valPotassio;
     }
 
-    public void setValCalcio(double valPotassio) {
+    public void setValPotassio(double valPotassio) {
         this.valPotassio = valPotassio;
     }
 }

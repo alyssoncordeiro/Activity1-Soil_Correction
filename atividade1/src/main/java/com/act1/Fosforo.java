@@ -1,6 +1,6 @@
 package com.act1;
 
-public class Fosforo extends calculoTeor {
+public class Fosforo extends CalculoTeor {
     private double valFosforo;
     private int texturaSolo;
 
@@ -12,11 +12,11 @@ public class Fosforo extends calculoTeor {
         this.texturaSolo = texturaSolo;
     }
 
-    public double getvalFosforo() {
+    public double getValFosforo() {
         return valFosforo;
     }
 
-    public void setValCalcio(double valFosforo) {
+    public void setValFosforo(double valFosforo) {
         this.valFosforo = valFosforo;
     }
 }

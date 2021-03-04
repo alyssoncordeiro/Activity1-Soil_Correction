@@ -1,7 +1,7 @@
 package com.act1;
 
-public class Calcio extends CalculoTeor {
-    private double valCalcio;
+public class Enxofre extends CalculoTeor {
+    private double valEnxofre;
     private int texturaSolo;
 
     public int getTexturaSolo() {
@@ -12,11 +12,11 @@ public class Calcio extends CalculoTeor {
         this.texturaSolo = texturaSolo;
     }
 
-    public double getValCalcio() {
-        return valCalcio;
+    public double getValEnxofre() {
+        return valEnxofre;
     }
 
-    public void setValCalcio(double valCalcio) {
-        this.valCalcio = valCalcio;
+    public void setValEnxofre(double valEnxofre) {
+        this.valEnxofre = valEnxofre;
     }
 }
