@@ -13,4 +13,15 @@ public class CalculoTeor extends App {
         return f.getValFosforo();
     }
 
+    public double calculaPotassio() {
+        Potassio f = new Potassio();
+
+        f.setTexturaSolo(1);
+        if (f.getTexturaSolo() == 1) {
+            f.setValPotassio(0.35);
+        } else if (f.getTexturaSolo() == 2) {
+            f.setValPotassio(0.35);
+        }
+        return f.getValPotassio();
+    }
 }
