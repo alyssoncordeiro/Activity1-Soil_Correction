@@ -2,13 +2,13 @@ package com.act1;
 
 public class Aluminio extends CalculoTeor {
     private double valAluminio;
-    private int texturaSolo;
+    private double texturaSolo;
 
-    public int getTexturaSolo() {
+    public double getTexturaSolo() {
         return texturaSolo;
     }
 
-    public void setTexturaSolo(int texturaSolo) {
+    public void setTexturaSolo(double texturaSolo) {
         this.texturaSolo = texturaSolo;
     }
 

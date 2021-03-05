@@ -2,13 +2,13 @@ package com.act1;
 
 public class Enxofre extends CalculoTeor {
     private double valEnxofre;
-    private int texturaSolo;
+    private double texturaSolo;
 
-    public int getTexturaSolo() {
+    public double getTexturaSolo() {
         return texturaSolo;
     }
 
-    public void setTexturaSolo(int texturaSolo) {
+    public void setTexturaSolo(double texturaSolo) {
         this.texturaSolo = texturaSolo;
     }
 
