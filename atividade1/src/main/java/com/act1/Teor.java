@@ -1,7 +1,7 @@
 package com.act1;
 
-public class Potassio extends CalculoTeor {
-    private double valPotassio;
+public class Teor extends CalculoTeor {
+    private double valTeor;
     private double texturaSolo;
 
     public double getTexturaSolo() {
@@ -12,11 +12,12 @@ public class Potassio extends CalculoTeor {
         this.texturaSolo = texturaSolo;
     }
 
-    public double getValPotassio() {
-        return valPotassio;
+    public double getValTeor() {
+        return valTeor;
     }
 
-    public void setValPotassio(double valPotassio) {
-        this.valPotassio = valPotassio;
+    public void setValTeor(double valTeor) {
+        this.valTeor = valTeor;
     }
+
 }

@@ -3,125 +3,104 @@ package com.act1;
 import java.util.Scanner;
 
 public class CalculoTeor extends App {
+    private double fosforo, potassio, calcio, magnesio, enxofre, aluminio, scmol, ctc, hal, vAtual;
+
+    public double getFosforo() {
+        return fosforo;
+    }
+
+    public double getPotassio() {
+        return potassio;
+    }
+
+    public double getCalcio() {
+        return calcio;
+    }
+
+    public double getAluminio() {
+        return aluminio;
+    }
+
+    public double getEnxofre() {
+        return enxofre;
+    }
+
+    public double getScmol() {
+        return scmol;
+    }
+
+    public double getCtc() {
+        return ctc;
+    }
+
+    public double getMagnesio() {
+        return magnesio;
+    }
+
+    public double getHal() {
+        return hal;
+    }
+
+    public double getVAtual() {
+        return vAtual;
+    }
 
     /*
      * textura do solo 1 = solo argiloso; textura do solo 2 = textura média
      */
-
-    public double calculaFosforo() {
-        Fosforo f = new Fosforo();
-        double teorFos = 0;
+    public double calculaTeor() {
+        Teor t = new Teor();
+        double teorSolo = 0;
 
         Scanner ler = new Scanner(System.in);
-        System.out.printf("\nInforme o teor do fosforo = ");
+        System.out.printf("\nInforme o tipo do solo = ");
 
-        teorFos = ler.nextDouble();
-        f.setTexturaSolo(teorFos);
-        if (f.getTexturaSolo() == 1) {
-            teorFos = 9.00;
-        } else if (f.getTexturaSolo() == 2) {
-            teorFos = 12.00;
+        teorSolo = ler.nextDouble();
+        t.setTexturaSolo(teorSolo);
+        if (t.getTexturaSolo() == 1) {
+            System.out.printf("\nSolo argiloso\n");
+            System.out.printf("\nTeores Ideais:\n");
+            this.fosforo = 9;
+            this.potassio = 0.35;
+            this.calcio = 6;
+            this.magnesio = 1.5;
+            this.enxofre = 9;
+            this.aluminio = 0;
+            this.hal = 5.35;
+
+            this.vAtual = ((100 * (this.calcio + this.magnesio + this.potassio))
+                    / (this.calcio + this.magnesio + this.potassio + hal));
+
+            if (calcio + magnesio + potassio > 0.01) {
+                this.scmol = this.calcio + this.magnesio + this.potassio;
+            }
+            if (calcio + magnesio + potassio + hal > 0.01) {
+                this.ctc = this.calcio + this.magnesio + this.potassio + this.hal;
+            }
+
+        } else if (t.getTexturaSolo() == 2) {
+            System.out.printf("\nSolo de textura média\n");
+            System.out.printf("\nTeores Ideais:\n");
+            this.fosforo = 12;
+            this.potassio = 0.25;
+            this.calcio = 4;
+            this.magnesio = 1;
+            this.enxofre = 6;
+            this.aluminio = 0;
+            this.hal = 5.35;
+
+            this.vAtual = ((100 * (this.calcio + this.magnesio + this.potassio))
+                    / (this.calcio + this.magnesio + this.potassio + hal));
+
+            if (calcio + magnesio + potassio > 0.01) {
+                this.scmol = this.calcio + this.magnesio + this.potassio;
+            }
+            if (calcio + magnesio + potassio + hal > 0.01) {
+                this.ctc = this.calcio + this.magnesio + this.potassio + this.hal;
+            }
         }
-        f.setValFosforo(teorFos);
-        return f.getValFosforo();
+        t.setValTeor(teorSolo);
+        return t.getValTeor();
     }
 
-    public double calculaPotassio() {
-        Potassio p = new Potassio();
-        double teorPo = 0;
-
-        Scanner ler = new Scanner(System.in);
-        System.out.printf("Informe o teor do potassio = ");
-
-        teorPo = ler.nextDouble();
-        p.setTexturaSolo(teorPo);
-        if (p.getTexturaSolo() == 1) {
-            teorPo = 0.35;
-        } else if (p.getTexturaSolo() == 2) {
-            teorPo = 0.25;
-        }
-        p.setValPotassio(teorPo);
-        return p.getValPotassio();
-    }
-
-    public double calculaCalcio() {
-        Calcio c = new Calcio();
-        double teorCal = 0;
-
-        Scanner ler = new Scanner(System.in);
-        System.out.printf("Informe o teor do calcio = ");
-
-        teorCal = ler.nextDouble();
-        c.setTexturaSolo(teorCal);
-        if (c.getTexturaSolo() == 1) {
-            teorCal = 6.00;
-        } else if (c.getTexturaSolo() == 2) {
-            teorCal = 4.00;
-        }
-        c.setValCalcio(teorCal);
-        return c.getValCalcio();
-    }
-
-    public double calculaMagnesio() {
-        Magnesio m = new Magnesio();
-        double teorMag = 0;
-
-        Scanner ler = new Scanner(System.in);
-        System.out.printf("Informe o teor do magnesio = ");
-
-        teorMag = ler.nextDouble();
-        m.setTexturaSolo(teorMag);
-        if (m.getTexturaSolo() == 1) {
-            teorMag = 1.50;
-        } else if (m.getTexturaSolo() == 2) {
-            teorMag = 1.00;
-        }
-        m.setValMagnesio(teorMag);
-        return m.getValMagnesio();
-    }
-
-    public double calculaEnxofre() {
-        Enxofre e = new Enxofre();
-        double teorEnx = 0;
-
-        Scanner ler = new Scanner(System.in);
-        System.out.printf("Informe o teor do enxofre = ");
-
-        teorEnx = ler.nextDouble();
-        e.setTexturaSolo(teorEnx);
-        if (e.getTexturaSolo() == 1) {
-            teorEnx = 9.00;
-        } else if (e.getTexturaSolo() == 2) {
-            teorEnx = 6.00;
-        }
-        e.setValEnxofre(teorEnx);
-        return e.getValEnxofre();
-    }
-
-    public double calculaAluminio() {
-        Aluminio a = new Aluminio();
-        double teorAlu = 0;
-
-        Scanner ler = new Scanner(System.in);
-        System.out.printf("Informe o teor do aluminio = ");
-
-        teorAlu = ler.nextDouble();
-        a.setTexturaSolo(teorAlu);
-        if (a.getTexturaSolo() == 1) {
-            teorAlu = 0.00;
-        } else if (a.getTexturaSolo() == 2) {
-            teorAlu = 0.00;
-        }
-        a.setValAluminio(teorAlu);
-        return a.getValAluminio();
-    }
-
-    public static double HAL() {
-        double hAl = 0;
-
-        Scanner ler = new Scanner(System.in);
-        System.out.printf("Informe o H + AL = ");
-        hAl = ler.nextDouble();
-        return (hAl);
-    }
 }
