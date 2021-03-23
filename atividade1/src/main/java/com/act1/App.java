@@ -2,20 +2,15 @@ package com.act1;
 
 public class App {
     public static void main(String[] args) {
-        CalculoTeor c = new CalculoTeor();
-        c.calculaTeor();
+        CalculoTeor t = new CalculoTeor();
 
-        System.out.println("Aluminio: " + c.getAluminio());
-        System.out.println("Calcio: " + c.getCalcio());
-        System.out.println("Enxofre: " + c.getEnxofre());
-        System.out.println("Magnesio: " + c.getMagnesio());
-        System.out.println("Potassio: " + c.getPotassio());
-        System.out.println("Fosforo: " + c.getFosforo());
-        System.out.println("H+AL: " + c.getHal());
-        System.out.println("S cmol: " + c.getScmol());
-        System.out.println("CTC cmol: " + c.getCtc());
-        System.out.println("V Atual: " + c.getVAtual());
-
+        System.out.println("\nValores ideais do solo: \n");
+        System.out.println("Aluminio: " + t.aluminioTeor(t));
+        System.out.println("Calcio: " + t.calcioTeor(t));
+        System.out.println("Enxofre: " + t.enxofreTeor(t));
+        System.out.println("Magnesio: " + t.magnesioTeor(t));
+        System.out.println("Potassio: " + t.potassioTeor(t));
+        System.out.println("Fosforo: " + t.fosforoTeor(t));
     }
 
 }
