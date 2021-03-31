@@ -2,8 +2,9 @@ package com.act1;
 
 public class CalculoTeor extends App {
     private double fosforo, potassio, calcio, magnesio, enxofre, aluminio, hal;
-    int texturaSolo;
+    int texturaSolo, fosforoFonte;
 
+    // métodos get / set
     public double getTexturaSolo() {
         return texturaSolo;
     }
@@ -68,6 +69,7 @@ public class CalculoTeor extends App {
         this.hal = Hal;
     }
 
+    // teores ideais
     public Double fosforoTeor(CalculoTeor t) {
         if (t.texturaSolo == 1) {
             return 9.0;
