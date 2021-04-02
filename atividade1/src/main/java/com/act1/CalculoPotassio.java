@@ -24,26 +24,4 @@ public class CalculoPotassio extends CalculoTeor {
         }
     }
 
-    public Double participacaoPotassioCTC(double teorPotassio, double teorCalcio, double teorMagnesio, double teorHAl) {
-        return teorPotassio / (teorCalcio + teorMagnesio + teorPotassio + teorHAl) * 100;
-    }
-
-    public Double participacaoPotassioCTCIdeal(CalculoTeor t) {
-        if (t.texturaSolo == 1) {
-            return 3.0;
-        } else {
-            return 3.0;
-        }
-    }
-
-    public Double verificaParticipacaoPotassio(CalculoTeor t) {
-        double result = (t.potassio * t.participacaoPotassioCTCIdeal(t)
-                / t.participacaoPotassioCTC(t.potassio, t.calcio, t.magnesio, t.hal)) - t.potassio;
-
-        if (result < 0.01) {
-            return 0.0;
-        } else {
-            return result;
-        }
-    }
 }
