@@ -141,13 +141,13 @@ public class CalculoTeor extends App {
     }
 
     public Double verificaParticipacaoPotassio(CalculoTeor t) {
-        double result = (t.potassio * t.participacaoPotassioCTCIdeal(t)
+        double resultado = (t.potassio * t.participacaoPotassioCTCIdeal(t)
                 / t.participacaoPotassioCTC(t.potassio, t.calcio, t.magnesio, t.hal)) - t.potassio;
 
-        if (result < 0.01) {
+        if (resultado < 0.01) {
             return 0.0;
         } else {
-            return result;
+            return resultado;
         }
     }
 

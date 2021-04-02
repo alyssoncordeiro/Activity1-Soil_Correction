@@ -112,4 +112,34 @@ public class CalculoFosforo extends CalculoTeor {
         }
     }
 
+    double calculaEnxofre(int fosforoFonte, double quantidadeAplicar) {
+        if (fosforoFonte == 1) {
+            return quantidadeAplicar * 0.28;
+        } else if (fosforoFonte == 2) {
+            return quantidadeAplicar * 0.2;
+        } else if (fosforoFonte == 3) {
+            return quantidadeAplicar * 0.09;
+        } else if (fosforoFonte == 4) {
+            return quantidadeAplicar * 0.16;
+        } else if (fosforoFonte == 5) {
+            return quantidadeAplicar * 0.28;
+        } else if (fosforoFonte == 6) {
+            return quantidadeAplicar * 0.52;
+        } else if (fosforoFonte == 7) {
+            return quantidadeAplicar * 0.52;
+        } else if (fosforoFonte == 8) {
+            return quantidadeAplicar * 0.45;
+        } else if (fosforoFonte == 9) {
+            return quantidadeAplicar * 0.28;
+        } else if (fosforoFonte == 10) {
+            return quantidadeAplicar * 0.44;
+        } else if (fosforoFonte == 11) {
+            return quantidadeAplicar * 0.0;
+        } else if (fosforoFonte == 12) {
+            return quantidadeAplicar * 0.18;
+        } else {
+            return 0.0;
+        }
+    }
+
 }
