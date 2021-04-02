@@ -1,7 +1,15 @@
 package com.act1;
 
-public class CalculoFosforo extends App {
-    private double fosforoEficiencia;
+public class CalculoFosforo extends CalculoTeor {
+    private double fosforoEficiencia, fosforoTeorAtingir;
+
+    public void setFosforoTeorAtingir(double fosforoTeorAtingir) {
+        this.fosforoTeorAtingir = fosforoTeorAtingir;
+    }
+
+    public Double getFosforoTeorAtingir() {
+        return fosforoTeorAtingir;
+    }
 
     public void setfosforoEficiencia(double fosforoEficiencia) {
         this.fosforoEficiencia = fosforoEficiencia;
@@ -9,6 +17,14 @@ public class CalculoFosforo extends App {
 
     public Double getfosforoEficiencia() {
         return fosforoEficiencia;
+    }
+
+    public void setFosforoFonte(int fosforoFonte) {
+        this.fosforoFonte = fosforoFonte;
+    }
+
+    public int getFosforoFonte() {
+        return fosforoFonte;
     }
 
     public Double valorFosforoFonte(CalculoTeor t) {
@@ -39,4 +55,61 @@ public class CalculoFosforo extends App {
         }
         return fosforoEficiencia;
     }
+
+    double quantidadeAplicar(double fosforoTeorAtingir, double fosforoEficiencia, double fosforoTeor,
+            double fosforoFonte, double resultado) {
+        if ((fosforoTeorAtingir - fosforoTeor) < 0.01) {
+            return 0;
+        } else {
+            return ((((fosforoTeorAtingir - fosforoTeor) * 2 * 2.29) * 100 / fosforoEficiencia / 100) * 100
+                    / resultado);
+        }
+    }
+
+    double superfosfatoSimples(int fosforoFonte, double quantidadeAplicar, double calculoTeor) {
+        if (fosforoFonte == 5) {
+            return quantidadeAplicar * 0.15;
+        } else if (fosforoFonte == 1) {
+            return calculoTeor * 0.1 / 2.42;
+        } else if (fosforoFonte == 12) {
+            return calculoTeor * 0.11 / 2.42;
+        } else {
+            return 0;
+        }
+    }
+
+    double calculaCusto(int fosforoFonte, double quantidadeAplicar, double valor) {
+        if (fosforoFonte >= 1 && fosforoFonte <= 12) {
+            return (valor * quantidadeAplicar / 1000);
+        } else {
+            return 0.0;
+        }
+    }
+
+    double quantidadeAplicarPotassio(double potassioVerificado, double potassioFonteUtilizar) {
+        double resultado = (((potassioVerificado * 39.1 * 10) * 2 * 1.2) * 100 / 0.85 / 100) * 100
+                / potassioFonteUtilizar;
+
+        return resultado;
+    }
+
+    double custoPotassio(int fontePotassioUtilizar, double valor, double quantidadeAplicarPotassio) {
+        if (fontePotassioUtilizar == 1 || fontePotassioUtilizar == 2 || fontePotassioUtilizar == 3) {
+            return ((valor * quantidadeAplicarPotassio) / 1000);
+        }
+        return 0;
+    }
+
+    double kgHectare(int potassioFonteUtilizar, double quantidadeAplicarPotassio) {
+        if (potassioFonteUtilizar == 1) {
+            return 0;
+        } else if (potassioFonteUtilizar == 2) {
+            return quantidadeAplicarPotassio * 0.17;
+        } else if (potassioFonteUtilizar == 3) {
+            return quantidadeAplicarPotassio * 0.22;
+        } else {
+            return 0;
+        }
+    }
+
 }
