@@ -31,4 +31,22 @@ public class Somatoria extends App {
         return x;
     }
 
+    double MOPercentual(double mo) {
+        if (mo > 0) {
+            return mo / 10;
+
+        } else {
+            return 0.0;
+        }
+    }
+
+    double calculaCarbono(double percentual) {
+        if (percentual > 0) {
+            return percentual / (1.72 * 10);
+
+        } else {
+            return 0.0;
+        }
+    }
+
 }
