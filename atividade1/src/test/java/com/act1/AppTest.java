@@ -206,4 +206,77 @@ public class AppTest {
             Assert.assertEquals(e.getMessage(), "ERROR");
         }
     }
+
+    @Test
+    public void testeMOPercentual() {
+        Somatoria s = new Somatoria();
+
+        Assert.assertEquals(3.07, s.MOPercentual(30.7), 1);
+    }
+
+    @Test
+    public void testeCalculaCarbono() {
+        Somatoria s = new Somatoria();
+
+        Assert.assertEquals(17.848837209302324, s.calculaCarbono(s.MOPercentual(30.7)), 1);
+    }
+
+    @Test
+    public void testeParticipacaoPotassioCTC() {
+        CalculoTeor t = new CalculoTeor();
+
+        t.setPotassio(0.15);
+        t.setCalcio(5.76);
+        t.setMagnesio(1.63);
+        t.setHal(5.35);
+
+        Assert.assertEquals(1.2, t.participacaoPotassioCTC(t.getPotassio(), t.getCalcio(), t.getMagnesio(), t.getHal()),
+                1);
+    }
+
+    @Test
+    public void testeParticipacaoPotassioCTCIdeal() {
+        CalculoTeor t = new CalculoTeor();
+
+        t.setTexturaSolo(1);
+
+        Assert.assertEquals(3.0, t.participacaoPotassioCTCIdeal(t), 0);
+    }
+
+    @Test
+    public void testeQuantidadeAplicadaPotassio() {
+        CalculoTeor t = new CalculoTeor();
+        CalculoPotassio p = new CalculoPotassio();
+        CalculoFosforo f = new CalculoFosforo();
+
+        t.setTexturaSolo(1);
+        p.setPotassioFonteUtilizar(1);
+        t.setPotassio(0.15);
+        t.setCalcio(5.76);
+        t.setMagnesio(1.63);
+        t.setHal(5.35);
+
+        Assert.assertEquals(450.55,
+                f.quantidadeAplicarPotassio(t.verificaParticipacaoPotassio(t), p.ValPotassioFonteUtilizar(p)), 1);
+    }
+
+    @Test
+    public void testeKgHectare() {
+        CalculoTeor t = new CalculoTeor();
+        CalculoPotassio p = new CalculoPotassio();
+        CalculoFosforo f = new CalculoFosforo();
+
+        t.setTexturaSolo(1);
+        p.setPotassioFonteUtilizar(1);
+        t.setPotassio(0.15);
+        t.setCalcio(5.76);
+        t.setMagnesio(1.63);
+        t.setHal(5.35);
+
+        Assert.assertEquals(0,
+                f.kgHectare(p.getPotassioFonteUtilizar(),
+                        f.quantidadeAplicarPotassio(t.verificaParticipacaoPotassio(t), p.ValPotassioFonteUtilizar(p))),
+                1);
+    }
+
 }

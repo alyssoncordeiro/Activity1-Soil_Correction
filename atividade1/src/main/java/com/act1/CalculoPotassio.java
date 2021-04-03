@@ -2,22 +2,22 @@ package com.act1;
 
 public class CalculoPotassio extends CalculoTeor {
 
-    public void setFontePotassioUtilizar(int fontePotassioUtilizar) {
-        this.fontePotassioUtilizar = fontePotassioUtilizar;
+    public void setPotassioFonteUtilizar(int potassioFonteUtilizar) {
+        this.potassioFonteUtilizar = potassioFonteUtilizar;
     }
 
-    public int getFontePotassioUtilizar() {
-        return fontePotassioUtilizar;
+    public int getPotassioFonteUtilizar() {
+        return potassioFonteUtilizar;
     }
 
-    public Double fontePotassioUtilizar(CalculoTeor t) {
-        if (t.fontePotassioUtilizar == 1) {
+    public Double ValPotassioFonteUtilizar(CalculoTeor t) {
+        if (t.potassioFonteUtilizar == 1) {
             return 58.0;
-        } else if (t.fontePotassioUtilizar == 2) {
+        } else if (t.potassioFonteUtilizar == 2) {
             return 52.0;
-        } else if (t.fontePotassioUtilizar == 3) {
+        } else if (t.potassioFonteUtilizar == 3) {
             return 22.0;
-        } else if (t.fontePotassioUtilizar == 4) {
+        } else if (t.potassioFonteUtilizar == 4) {
             return 44.0;
         } else {
             return 0.0;

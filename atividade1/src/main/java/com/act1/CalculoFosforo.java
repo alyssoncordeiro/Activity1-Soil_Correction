@@ -11,11 +11,11 @@ public class CalculoFosforo extends CalculoTeor {
         return fosforoTeorAtingir;
     }
 
-    public void setfosforoEficiencia(double fosforoEficiencia) {
+    public void setFosforoEficiencia(double fosforoEficiencia) {
         this.fosforoEficiencia = fosforoEficiencia;
     }
 
-    public Double getfosforoEficiencia() {
+    public Double getFosforoEficiencia() {
         return fosforoEficiencia;
     }
 

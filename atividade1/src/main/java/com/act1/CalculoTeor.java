@@ -3,7 +3,7 @@ package com.act1;
 public class CalculoTeor extends App {
     private double fosforo, potassio, calcio, magnesio, enxofre, aluminio, hal;
     private double fosforoTeorAtingir;
-    int texturaSolo, fosforoFonte, fontePotassioUtilizar;
+    int texturaSolo, fosforoFonte, potassioFonteUtilizar;
 
     // métodos get / set
     public double getTexturaSolo() {
