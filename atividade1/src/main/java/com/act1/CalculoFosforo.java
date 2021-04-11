@@ -2,6 +2,8 @@ package com.act1;
 
 public class CalculoFosforo extends CalculoTeor {
     private double fosforoEficiencia, fosforoTeorAtingir;
+    private double[] valorFosforoFonte = { 18.0, 41.0, 48.0, 45.0, 18.0, 33.0, 29.0, 32.0, 24.0, 18.5, 52.0, 18.0 };
+    private double[] calculaEnxofre = { 0.28, 0.2, 0.09, 0.16, 0.28, 0.52, 0.52, 0.45, 0.28, 0.44, 0.0, 0.18 };
 
     public void setFosforoTeorAtingir(double fosforoTeorAtingir) {
         this.fosforoTeorAtingir = fosforoTeorAtingir;
@@ -27,33 +29,12 @@ public class CalculoFosforo extends CalculoTeor {
         return fosforoFonte;
     }
 
-    public Double valorFosforoFonte(CalculoTeor t) {
-        if (t.fosforoFonte == 1) {
-            return 18.0;
-        } else if (t.fosforoFonte == 2) {
-            return 41.0;
-        } else if (t.fosforoFonte == 3) {
-            return 48.0;
-        } else if (t.fosforoFonte == 4) {
-            return 45.0;
-        } else if (t.fosforoFonte == 5) {
-            return 18.0;
-        } else if (t.fosforoFonte == 6) {
-            return 33.0;
-        } else if (t.fosforoFonte == 7) {
-            return 29.0;
-        } else if (t.fosforoFonte == 8) {
-            return 32.0;
-        } else if (t.fosforoFonte == 9) {
-            return 24.0;
-        } else if (t.fosforoFonte == 10) {
-            return 18.5;
-        } else if (t.fosforoFonte == 11) {
-            return 52.0;
-        } else if (t.fosforoFonte == 12) {
-            return 18.0;
-        }
-        return fosforoEficiencia;
+    public double valorFosforoFonte(CalculoFosforo f) {
+        return f.valorFosforoFonte[f.fosforoFonte - 1];
+    }
+
+    double calculoEnxofre(int fonteFosforo, double quantidadeAplicar) {
+        return quantidadeAplicar * calculaEnxofre[fonteFosforo - 1];
     }
 
     double quantidadeAplicar(double fosforoTeorAtingir, double fosforoEficiencia, double fosforoTeor,
@@ -94,10 +75,7 @@ public class CalculoFosforo extends CalculoTeor {
     }
 
     double custoPotassio(int fontePotassioUtilizar, double valor, double quantidadeAplicarPotassio) {
-        if (fontePotassioUtilizar == 1 || fontePotassioUtilizar == 2 || fontePotassioUtilizar == 3) {
-            return ((valor * quantidadeAplicarPotassio) / 1000);
-        }
-        return 0;
+        return valor * quantidadeAplicarPotassio / 1000;
     }
 
     double kgHectare(int potassioFonteUtilizar, double quantidadeAplicarPotassio) {
@@ -111,35 +89,4 @@ public class CalculoFosforo extends CalculoTeor {
             return 0;
         }
     }
-
-    double calculaEnxofre(int fosforoFonte, double quantidadeAplicar) {
-        if (fosforoFonte == 1) {
-            return quantidadeAplicar * 0.28;
-        } else if (fosforoFonte == 2) {
-            return quantidadeAplicar * 0.2;
-        } else if (fosforoFonte == 3) {
-            return quantidadeAplicar * 0.09;
-        } else if (fosforoFonte == 4) {
-            return quantidadeAplicar * 0.16;
-        } else if (fosforoFonte == 5) {
-            return quantidadeAplicar * 0.28;
-        } else if (fosforoFonte == 6) {
-            return quantidadeAplicar * 0.52;
-        } else if (fosforoFonte == 7) {
-            return quantidadeAplicar * 0.52;
-        } else if (fosforoFonte == 8) {
-            return quantidadeAplicar * 0.45;
-        } else if (fosforoFonte == 9) {
-            return quantidadeAplicar * 0.28;
-        } else if (fosforoFonte == 10) {
-            return quantidadeAplicar * 0.44;
-        } else if (fosforoFonte == 11) {
-            return quantidadeAplicar * 0.0;
-        } else if (fosforoFonte == 12) {
-            return quantidadeAplicar * 0.18;
-        } else {
-            return 0.0;
-        }
-    }
-
 }

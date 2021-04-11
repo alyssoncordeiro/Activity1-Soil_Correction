@@ -279,4 +279,65 @@ public class AppTest {
                 1);
     }
 
+    @Test
+    public void testeQuantidadeAplicar() {
+        CalculoFosforo f = new CalculoFosforo();
+        CalculoTeor t = new CalculoTeor();
+
+        f.setFosforoTeorAtingir(12.0);
+        t.setFosforo(8.59);
+        f.setFosforoFonte(1);
+        f.setFosforoEficiencia(0.7);
+
+        Assert.assertEquals(123.95, f.quantidadeAplicar(f.getFosforoTeorAtingir(), t.getFosforo(),
+                f.getFosforoEficiencia(), f.getFosforoFonte(), f.valorFosforoFonte(f)), 1);
+    }
+
+    @Test
+    public void testeCustoPotassio() {
+        CalculoTeor t = new CalculoTeor();
+        CalculoPotassio p = new CalculoPotassio();
+        CalculoFosforo f = new CalculoFosforo();
+
+        t.setTexturaSolo(1);
+        p.setPotassioFonteUtilizar(1);
+        t.setPotassio(0.15);
+        t.setCalcio(5.76);
+        t.setMagnesio(1.63);
+        t.setHal(5.35);
+
+        Assert.assertEquals(1126.37,
+                f.custoPotassio(p.getPotassioFonteUtilizar(), 2500.00,
+                        f.quantidadeAplicarPotassio(f.verificaParticipacaoPotassio(f), p.ValPotassioFonteUtilizar(p))),
+                1);
+    }
+
+    @Test
+    public void testeCalculoEnxofre() {
+        CalculoFosforo f = new CalculoFosforo();
+
+        f.setFosforoTeorAtingir(12.0);
+        f.setFosforo(8.59);
+        f.setFosforoFonte(1);
+        f.setFosforoEficiencia(0.7);
+
+        Assert.assertEquals(34.7, f.calculoEnxofre(f.getFosforoFonte(), f.quantidadeAplicar(f.getFosforoTeorAtingir(),
+                f.getFosforo(), f.getFosforoEficiencia(), f.getFosforoFonte(), f.valorFosforoFonte(f))), 1);
+    }
+
+    @Test
+    public void testeCalculoCustoFosforo() {
+        CalculoFosforo f = new CalculoFosforo();
+
+        f.setFosforoTeorAtingir(12.0);
+        f.setFosforo(8.59);
+        f.setFosforoFonte(1);
+        f.setFosforoEficiencia(0.7);
+
+        Assert.assertEquals(
+                156.18, f.calculaCusto(f.getFosforoFonte(), f.quantidadeAplicar(f.getFosforoTeorAtingir(),
+                        f.getFosforo(), f.getFosforoEficiencia(), f.getFosforoFonte(), f.valorFosforoFonte(f)), 1260.0),
+                1);
+    }
+
 }
