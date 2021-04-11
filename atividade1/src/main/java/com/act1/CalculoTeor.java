@@ -71,7 +71,7 @@ public class CalculoTeor extends App {
     }
 
     // teores ideais
-    public Double fosforoTeor(CalculoTeor t) {
+    public double fosforoTeor(CalculoTeor t) {
         if (t.texturaSolo == 1) {
             return 9.0;
         } else {
@@ -79,7 +79,7 @@ public class CalculoTeor extends App {
         }
     }
 
-    public Double potassioTeor(CalculoTeor t) {
+    public double potassioTeor(CalculoTeor t) {
         if (t.texturaSolo == 1) {
             return 0.35;
         } else {
@@ -87,7 +87,7 @@ public class CalculoTeor extends App {
         }
     }
 
-    public Double calcioTeor(CalculoTeor t) {
+    public double calcioTeor(CalculoTeor t) {
         if (t.texturaSolo == 1) {
             return 6.00;
         } else {
@@ -95,7 +95,7 @@ public class CalculoTeor extends App {
         }
     }
 
-    public Double magnesioTeor(CalculoTeor t) {
+    public double magnesioTeor(CalculoTeor t) {
         if (t.texturaSolo == 1) {
             return 1.50;
         } else {
@@ -103,7 +103,7 @@ public class CalculoTeor extends App {
         }
     }
 
-    public Double enxofreTeor(CalculoTeor t) {
+    public double enxofreTeor(CalculoTeor t) {
         if (t.texturaSolo == 1) {
             return 9.00;
         } else {
@@ -111,7 +111,7 @@ public class CalculoTeor extends App {
         }
     }
 
-    public Double aluminioTeor(CalculoTeor t) {
+    public double aluminioTeor(CalculoTeor t) {
         if (t.texturaSolo == 1) {
             return 0.0;
         } else {
@@ -119,7 +119,7 @@ public class CalculoTeor extends App {
         }
     }
 
-    public Double teor(CalculoTeor t) {
+    public double teor(CalculoTeor t) {
         if ((t.fosforoTeorAtingir - t.fosforo) < 0.01) {
             return 0.0;
         } else {
@@ -128,11 +128,11 @@ public class CalculoTeor extends App {
     }
 
     // participação do potassio
-    public Double participacaoPotassioCTC(double teorPotassio, double teorCalcio, double teorMagnesio, double teorHAl) {
+    public double participacaoPotassioCTC(double teorPotassio, double teorCalcio, double teorMagnesio, double teorHAl) {
         return teorPotassio / (teorCalcio + teorMagnesio + teorPotassio + teorHAl) * 100;
     }
 
-    public Double participacaoPotassioCTCIdeal(CalculoTeor t) {
+    public double participacaoPotassioCTCIdeal(CalculoTeor t) {
         if (t.texturaSolo == 1) {
             return 3.0;
         } else {
@@ -140,7 +140,7 @@ public class CalculoTeor extends App {
         }
     }
 
-    public Double verificaParticipacaoPotassio(CalculoTeor t) {
+    public double verificaParticipacaoPotassio(CalculoTeor t) {
         double resultado = (t.potassio * t.participacaoPotassioCTCIdeal(t)
                 / t.participacaoPotassioCTC(t.potassio, t.calcio, t.magnesio, t.hal)) - t.potassio;
 

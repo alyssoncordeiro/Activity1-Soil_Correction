@@ -10,7 +10,7 @@ public class CalculoPotassio extends CalculoTeor {
         return potassioFonteUtilizar;
     }
 
-    public Double ValPotassioFonteUtilizar(CalculoTeor t) {
+    public double ValPotassioFonteUtilizar(CalculoTeor t) {
         if (t.potassioFonteUtilizar == 1) {
             return 58.0;
         } else if (t.potassioFonteUtilizar == 2) {

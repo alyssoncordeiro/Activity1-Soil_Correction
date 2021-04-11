@@ -9,7 +9,7 @@ public class CalculoFosforo extends CalculoTeor {
         this.fosforoTeorAtingir = fosforoTeorAtingir;
     }
 
-    public Double getFosforoTeorAtingir() {
+    public double getFosforoTeorAtingir() {
         return fosforoTeorAtingir;
     }
 
@@ -17,7 +17,7 @@ public class CalculoFosforo extends CalculoTeor {
         this.fosforoEficiencia = fosforoEficiencia;
     }
 
-    public Double getFosforoEficiencia() {
+    public double getFosforoEficiencia() {
         return fosforoEficiencia;
     }
 
