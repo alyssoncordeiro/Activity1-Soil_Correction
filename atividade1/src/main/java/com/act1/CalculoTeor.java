@@ -1,11 +1,9 @@
 package com.act1;
 
 public class CalculoTeor extends App {
-    private double fosforo, potassio, calcio, magnesio, enxofre, aluminio, hal;
-    private double fosforoTeorAtingir;
+    private double fosforo, potassio, calcio, magnesio, enxofre, aluminio, hal, fosforoTeorAtingir;
     int texturaSolo, fosforoFonte, potassioFonteUtilizar;
 
-    // métodos get / set
     public double getTexturaSolo() {
         return texturaSolo;
     }
@@ -70,7 +68,6 @@ public class CalculoTeor extends App {
         this.hal = Hal;
     }
 
-    // teores ideais
     public double fosforoTeor(CalculoTeor t) {
         if (t.texturaSolo == 1) {
             return 9.0;
@@ -127,7 +124,6 @@ public class CalculoTeor extends App {
         }
     }
 
-    // participação do potassio
     public double participacaoPotassioCTC(double teorPotassio, double teorCalcio, double teorMagnesio, double teorHAl) {
         return teorPotassio / (teorCalcio + teorMagnesio + teorPotassio + teorHAl) * 100;
     }
@@ -143,12 +139,10 @@ public class CalculoTeor extends App {
     public double verificaParticipacaoPotassio(CalculoTeor t) {
         double resultado = (t.potassio * t.participacaoPotassioCTCIdeal(t)
                 / t.participacaoPotassioCTC(t.potassio, t.calcio, t.magnesio, t.hal)) - t.potassio;
-
         if (resultado < 0.01) {
             return 0.0;
         } else {
             return resultado;
         }
     }
-
 }

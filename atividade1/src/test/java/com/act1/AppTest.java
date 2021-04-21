@@ -3,6 +3,7 @@ package com.act1;
 import org.junit.Test;
 
 import org.junit.Assert;
+
 //teste
 /**
  * Unit test for simple App.
@@ -246,37 +247,33 @@ public class AppTest {
     @Test
     public void testeQuantidadeAplicadaPotassio() {
         CalculoTeor t = new CalculoTeor();
-        CalculoPotassio p = new CalculoPotassio();
         CalculoFosforo f = new CalculoFosforo();
 
         t.setTexturaSolo(1);
-        p.setPotassioFonteUtilizar(1);
+        f.setPotassioFonteUtilizar(1);
         t.setPotassio(0.15);
         t.setCalcio(5.76);
         t.setMagnesio(1.63);
         t.setHal(5.35);
 
         Assert.assertEquals(450.55,
-                f.quantidadeAplicarPotassio(t.verificaParticipacaoPotassio(t), p.ValPotassioFonteUtilizar(p)), 1);
+                f.quantidadeAplicarPotassio(t.verificaParticipacaoPotassio(t), f.valorPotassioFonteUtilizar(f)), 1);
     }
 
     @Test
     public void testeKgHectare() {
         CalculoTeor t = new CalculoTeor();
-        CalculoPotassio p = new CalculoPotassio();
         CalculoFosforo f = new CalculoFosforo();
 
         t.setTexturaSolo(1);
-        p.setPotassioFonteUtilizar(1);
+        f.setPotassioFonteUtilizar(1);
         t.setPotassio(0.15);
         t.setCalcio(5.76);
         t.setMagnesio(1.63);
         t.setHal(5.35);
 
-        Assert.assertEquals(0,
-                f.kgHectare(p.getPotassioFonteUtilizar(),
-                        f.quantidadeAplicarPotassio(t.verificaParticipacaoPotassio(t), p.ValPotassioFonteUtilizar(p))),
-                1);
+        Assert.assertEquals(0, f.kgHectare(f.getPotassioFonteUtilizar(),
+                f.quantidadeAplicarPotassio(t.verificaParticipacaoPotassio(t), f.valorPotassioFonteUtilizar(f))), 1);
     }
 
     @Test
@@ -296,20 +293,17 @@ public class AppTest {
     @Test
     public void testeCustoPotassio() {
         CalculoTeor t = new CalculoTeor();
-        CalculoPotassio p = new CalculoPotassio();
         CalculoFosforo f = new CalculoFosforo();
 
         t.setTexturaSolo(1);
-        p.setPotassioFonteUtilizar(1);
+        f.setPotassioFonteUtilizar(1);
         t.setPotassio(0.15);
         t.setCalcio(5.76);
         t.setMagnesio(1.63);
         t.setHal(5.35);
 
-        Assert.assertEquals(1126.37,
-                f.custoPotassio(p.getPotassioFonteUtilizar(), 2500.00,
-                        f.quantidadeAplicarPotassio(f.verificaParticipacaoPotassio(f), p.ValPotassioFonteUtilizar(p))),
-                1);
+        Assert.assertEquals(1126.37, f.custoPotassio(f.getPotassioFonteUtilizar(), 2500.00,
+                f.quantidadeAplicarPotassio(f.verificaParticipacaoPotassio(f), f.valorPotassioFonteUtilizar(f))), 1);
     }
 
     @Test

@@ -4,6 +4,7 @@ public class CalculoFosforo extends CalculoTeor {
     private double fosforoEficiencia, fosforoTeorAtingir;
     private double[] valorFosforoFonte = { 18.0, 41.0, 48.0, 45.0, 18.0, 33.0, 29.0, 32.0, 24.0, 18.5, 52.0, 18.0 };
     private double[] calculaEnxofre = { 0.28, 0.2, 0.09, 0.16, 0.28, 0.52, 0.52, 0.45, 0.28, 0.44, 0.0, 0.18 };
+    private double[] fontePotassioUtilizarVal = { 58.0, 52.0, 22.0, 44.0 };
 
     public void setFosforoTeorAtingir(double fosforoTeorAtingir) {
         this.fosforoTeorAtingir = fosforoTeorAtingir;
@@ -29,8 +30,20 @@ public class CalculoFosforo extends CalculoTeor {
         return fosforoFonte;
     }
 
+    public void setPotassioFonteUtilizar(int potassioFonteUtilizar) {
+        this.potassioFonteUtilizar = potassioFonteUtilizar;
+    }
+
+    public int getPotassioFonteUtilizar() {
+        return potassioFonteUtilizar;
+    }
+
     public double valorFosforoFonte(CalculoFosforo f) {
         return f.valorFosforoFonte[f.fosforoFonte - 1];
+    }
+
+    public double valorPotassioFonteUtilizar(CalculoFosforo f) {
+        return f.fontePotassioUtilizarVal[f.potassioFonteUtilizar - 1];
     }
 
     double calculoEnxofre(int fonteFosforo, double quantidadeAplicar) {
@@ -70,7 +83,6 @@ public class CalculoFosforo extends CalculoTeor {
     double quantidadeAplicarPotassio(double potassioVerificado, double potassioFonteUtilizar) {
         double resultado = (((potassioVerificado * 39.1 * 10) * 2 * 1.2) * 100 / 0.85 / 100) * 100
                 / potassioFonteUtilizar;
-
         return resultado;
     }
 
