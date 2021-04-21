@@ -38,10 +38,24 @@ prompt> .\cloc-1.88.exe CalculoTeor.java
        1 unique file.
        0 files ignored.
 
-github.com/AlDanial/cloc v 1.88  T=0.15 s (6.6 files/s, 1023.6 lines/s)
+<h4>github.com/AlDanial/cloc v 1.88  T=0.15 s (6.6 files/s, 1023.6 lines/s)<h4>
 -------------------------------------------------------------------------------
 Language                     files          blank        comment           code
 -------------------------------------------------------------------------------
 Java                             1             29              3            122
+-------------------------------------------------------------------------------
+</pre>
+Classe Somatoria.java<br />
+<pre>
+prompt> .\cloc-1.88.exe Somatoria.java
+       1 text file.
+       1 unique file.
+       0 files ignored.
+
+<h4>github.com/AlDanial/cloc v 1.88  T=0.12 s (8.2 files/s, 419.9 lines/s)<h4>
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Java                             1             11              0             40
 -------------------------------------------------------------------------------
 </pre>
