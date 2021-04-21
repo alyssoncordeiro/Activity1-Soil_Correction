@@ -68,4 +68,52 @@ Após analizar os códigos alguns problemas foram encontrados, entre eles estão
 4- Comentários desnecessários na classe "CalculoTeor.java".<br />
 <hr width=100%>
 <h3>(iii) Soluções encontradas</h3><br />
-Para resolver os problemas 1 e 2 apontados, primeiramente foi realizado a alteração das estruturas condicionais da classe "CalculoPotassio.java" armazenando os valores em um vetor, todo o conteúdo remanescente foi transferido para as demais classes que fariam mais sentido no contexto, logo em seguida a classe foi deletada do projeto. Para os problemas 3 e 4, foram removidos os comentários desnecessários e as linhas em branco no código.
+Para resolver os problemas 1 e 2 apontados, primeiramente foi realizado a alteração das estruturas condicionais da classe "CalculoPotassio.java" armazenando os valores em um vetor, todo o conteúdo remanescente foi transferido para as demais classes que fariam mais sentido no contexto, logo em seguida a classe foi deletada do projeto. Para os problemas 3 e 4, foram removidos os comentários desnecessários e as linhas em branco no código.<br />
+A classe do "CalculoFosforo" recebeu um aumento em seu tamanho de código, mas se analisarmos, esse ganho foi pequeno diante daquilo que foi retirado do projeto como um todo.
+<hr width=100%>
+<h3>(iv) Implementação das soluções</h3><br />
+Commit: e221514cab2c8a0784650ae8461321a19e9b0a3f
+<hr width=100%>
+<h3>(v) Código depois das alterações</h3><br />
+Classe CalculoFosforo.java<br />
+<pre>
+prompt> .\cloc-1.88.exe CalculoFosforo.java
+       1 text file.
+       1 unique file.
+       0 files ignored.
+
+<h4>github.com/AlDanial/cloc v 1.88  T=0.01 s (68.6 files/s, 7133.1 lines/s)<h4>
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Java                             1             18              0             86
+-------------------------------------------------------------------------------
+</pre>
+Classe CalculoTeor.java<br />
+<pre>
+prompt> .\cloc-1.88.exe CalculoTeor.java
+       1 text file.
+       1 unique file.
+       0 files ignored.
+
+<h4>github.com/AlDanial/cloc v 1.88  T=0.01 s (70.0 files/s, 10359.9 lines/s)<h4>
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Java                             1             27              0            121
+-------------------------------------------------------------------------------
+</pre>
+Classe Somatoria.java<br />
+<pre>
+prompt> .\cloc-1.88.exe Somatoria.java
+       1 text file.
+       1 unique file.
+       0 files ignored.
+
+<h4>github.com/AlDanial/cloc v 1.88  T=0.01 s (69.9 files/s, 3147.3 lines/s)<h4>
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Java                             1              5              0             40
+-------------------------------------------------------------------------------
+</pre>
