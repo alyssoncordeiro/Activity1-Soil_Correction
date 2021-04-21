@@ -59,3 +59,13 @@ Language                     files          blank        comment           code
 Java                             1             11              0             40
 -------------------------------------------------------------------------------
 </pre>
+<hr width=100%>
+<h3>(ii) Problemas encontrados</h3><br />
+Após analizar os códigos alguns problemas foram encontrados, entre eles estão:<br />
+1- A classe "CalculoPotassio.java", que é desnecessária para o funcionamento do código.<br />
+2- Algumas estruturas condicionais desnecessárias dentro da classe "CalculoPotassio.java".<br />
+3- Linhas em branco dentro da classe "Somatoria.java" e da classe "CalculoTeor".<br />
+4- Comentários desnecessários na classe "CalculoTeor.java".<br />
+<hr width=100%>
+<h3>(iii) Soluções encontradas</h3><br />
+Para resolver os problemas 1 e 2 apontados, primeiramente foi realizado a alteração das estruturas condicionais da classe "CalculoPotassio.java" armazenando os valores em um vetor, todo o conteúdo remanescente foi transferido para as demais classes que fariam mais sentido no contexto, logo em seguida a classe foi deletada do projeto. Para os problemas 3 e 4, foram removidos os comentários desnecessários e as linhas em branco no código.
