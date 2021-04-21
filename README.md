@@ -17,3 +17,17 @@ Language                     files          blank        comment           code
 Java                             1             16              0             76
 -------------------------------------------------------------------------------
 </pre>
+Classe CalculoPotassio.java<br />
+<pre>
+prompt> .\cloc-1.88.exe CalculoPotassio.java
+       1 text file.
+       1 unique file.
+       0 files ignored.
+
+github.com/AlDanial/cloc v 1.88  T=0.05 s (20.9 files/s, 563.5 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Java                             1              5              0             22
+-------------------------------------------------------------------------------
+</pre>
