@@ -31,3 +31,17 @@ Language                     files          blank        comment           code
 Java                             1              5              0             22
 -------------------------------------------------------------------------------
 </pre>
+Classe CalculoTeor.java<br />
+<pre>
+prompt> .\cloc-1.88.exe CalculoTeor.java
+       1 text file.
+       1 unique file.
+       0 files ignored.
+
+github.com/AlDanial/cloc v 1.88  T=0.15 s (6.6 files/s, 1023.6 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Java                             1             29              3            122
+-------------------------------------------------------------------------------
+</pre>
