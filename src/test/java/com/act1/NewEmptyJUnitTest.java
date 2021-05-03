@@ -25,4 +25,17 @@ public class NewEmptyJUnitTest {
         assertEquals(17.848837209302324, s.calculaCarbono(3.07)); //Calculo do Carbono
     }
 
+    @Test
+    public void test02() {
+        CalculoFosforo f = new CalculoFosforo();
+        
+        f.setFosforoTeorAtingir(12.0);
+        f.setFosforoFonte(1);
+        f.setFosforoEficiencia(0.7);
+        f.setFosforo(8.59);
+        
+        assertEquals(22.31114285714286, f.calculaP2O5(f.getFosforoTeorAtingir(), f.getFosforoEficiencia(), f.getFosforo(), 1));//Aqui calcula o P2 O5
+        assertEquals(123.95079365079366, f.quantidadeAplicarFosforo(f.getFosforoFonte(), 22.31114285714286));//Quantidade Aplicar
+        assertEquals(156.177, f.calculaCusto(f.getFosforoFonte(), 123.95, 1260.00)); //Valor a aplicar por hectare
+    }
 }

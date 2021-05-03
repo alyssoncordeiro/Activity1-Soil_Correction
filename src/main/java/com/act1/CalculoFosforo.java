@@ -1,10 +1,11 @@
 package com.act1;
 
 public class CalculoFosforo extends CalculoTeor {
+
     private double fosforoEficiencia, fosforoTeorAtingir;
-    private double[] valorFosforoFonte = { 18.0, 41.0, 48.0, 45.0, 18.0, 33.0, 29.0, 32.0, 24.0, 18.5, 52.0, 18.0 };
-    private double[] calculaEnxofre = { 0.28, 0.2, 0.09, 0.16, 0.28, 0.52, 0.52, 0.45, 0.28, 0.44, 0.0, 0.18 };
-    private double[] fontePotassioUtilizarVal = { 58.0, 52.0, 22.0, 44.0 };
+    private double[] valorFosforoFonte = {18.0, 41.0, 48.0, 45.0, 18.0, 33.0, 29.0, 32.0, 24.0, 18.5, 52.0, 18.0};
+    private double[] calculaEnxofre = {0.28, 0.2, 0.09, 0.16, 0.28, 0.52, 0.52, 0.45, 0.28, 0.44, 0.0, 0.18};
+    private double[] fontePotassioUtilizarVal = {58.0, 52.0, 22.0, 44.0};
 
     public void setFosforoTeorAtingir(double fosforoTeorAtingir) {
         this.fosforoTeorAtingir = fosforoTeorAtingir;
@@ -50,21 +51,20 @@ public class CalculoFosforo extends CalculoTeor {
         return quantidadeAplicar * calculaEnxofre[fonteFosforo - 1];
     }
 
-    double quantidadeAplicar(double fosforoTeorAtingir, double fosforoEficiencia, double fosforoTeor,
-            double fosforoFonte, double resultado) {
+    double calculaP2O5(double fosforoTeorAtingir, double fosforoEficiencia, double fosforoTeor,
+            double resultado) { //calculo do P2O5
         if ((fosforoTeorAtingir - fosforoTeor) < 0.01) {
             return 0;
         } else {
-            return ((((fosforoTeorAtingir - fosforoTeor) * 2 * 2.29) * 100 / fosforoEficiencia / 100) * 100
-                    / resultado);
+            return ((((fosforoTeorAtingir - fosforoTeor) * 2 * 2.29) * 100 / fosforoEficiencia / 100) / resultado);
         }
     }
 
-    double superfosfatoSimples(int fosforoFonte, double quantidadeAplicar, double calculoTeor) {
+    double quantidadeAplicarFosforo(int fosforoFonte, double calculoTeor) {
         if (fosforoFonte == 5) {
-            return quantidadeAplicar * 0.15;
-        } else if (fosforoFonte == 1) {
-            return calculoTeor * 0.1 / 2.42;
+            return calculoTeor * 0.15;
+        } else if (fosforoFonte == 1) { //SuperfosfatoSimples
+            return calculoTeor * 100 / 18.0;
         } else if (fosforoFonte == 12) {
             return calculoTeor * 0.11 / 2.42;
         } else {
@@ -74,7 +74,7 @@ public class CalculoFosforo extends CalculoTeor {
 
     double calculaCusto(int fosforoFonte, double quantidadeAplicar, double valor) {
         if (fosforoFonte >= 1 && fosforoFonte <= 12) {
-            return (valor * quantidadeAplicar / 1000);
+            return (quantidadeAplicar * valor / 1000); //estava invertido
         } else {
             return 0.0;
         }
