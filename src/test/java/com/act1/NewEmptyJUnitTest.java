@@ -28,14 +28,32 @@ public class NewEmptyJUnitTest {
     @Test
     public void test02() {
         CalculoFosforo f = new CalculoFosforo();
-        
+
         f.setFosforoTeorAtingir(12.0);
         f.setFosforoFonte(1);
         f.setFosforoEficiencia(0.7);
         f.setFosforo(8.59);
-        
+
         assertEquals(22.31114285714286, f.calculaP2O5(f.getFosforoTeorAtingir(), f.getFosforoEficiencia(), f.getFosforo(), 1));//Aqui calcula o P2 O5
         assertEquals(123.95079365079366, f.quantidadeAplicarFosforo(f.getFosforoFonte(), 22.31114285714286));//Quantidade Aplicar
         assertEquals(156.177, f.calculaCusto(f.getFosforoFonte(), 123.95, 1260.00)); //Valor a aplicar por hectare
+    }
+
+    @Test
+    public void test03() {
+        CalculoTeor t = new CalculoTeor();
+        CalculoFosforo f = new CalculoFosforo();
+
+        t.setTexturaSolo(1);
+        f.setPotassioFonteUtilizar(1);
+        t.setPotassio(0.15);
+        t.setCalcio(5.76);
+        t.setMagnesio(1.63);
+        t.setHal(5.35);
+
+        assertEquals(450.55,
+                f.quantidadeAplicarPotassio(t.verificaParticipacaoPotassio(t), f.valorPotassioFonteUtilizar(f)), 1); //calcula a quantidade a aplicar
+        assertEquals(1126.37, f.custoPotassio(f.getPotassioFonteUtilizar(), 2500.00,
+                450.55), 1); // calcula o custo
     }
 }
