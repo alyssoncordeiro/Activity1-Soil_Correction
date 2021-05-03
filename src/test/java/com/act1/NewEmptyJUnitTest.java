@@ -24,5 +24,10 @@ public class NewEmptyJUnitTest {
         assertEquals(3.07, s.MOPercentual(30.7));//Calculo do M.O%
         assertEquals(17.848837209302324, s.calculaCarbono(3.07)); //Calculo do Carbono
     }
+    
+    @Test
+    public void test02(){
+        
+    }
 
 }
